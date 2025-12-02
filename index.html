@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>INDRAKAMAL MULTIPURPOSE COOPERATIVE </title>
+    <link rel="icon" type="image/png" sizes="12x12" href="/title_logo.png">
+    <link rel="stylesheet" href="style.css?v=1.0.1">
+    <script src="app.js?v=1.0.1"></script>
+
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+     
+
+
+
+     
+    
+        
+      
+        
+        
+       
+        
+       
+       .hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1920 / 700;
+    overflow: hidden;
+  }
+
+  .hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+
+  .hero img.active {
+    opacity: 1;
+  }
+
+  /* Slider Dots */
+  .dots {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #f5f5dc; /* creamy */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: yellow;
+  }
+        
+       
+        
+     
+       
+    </style>
+</head>
+<body>
+    
+
+  <!-- Popup Container -->
+<div id="imagePopup" class="popup">
+  <div class="popup-content">
+    <span id="closeFirst" class="close-btn">&times;</span> <!-- Changed ID -->
+    <img src="election-notice.jpeg" alt="Popup" class="popup-image" style="height: 80vh; width: auto;">
+  </div>
+</div>
+   
+<div id="secondPopup" class="popup">
+  <div class="popup-content">
+    <span id="closeSecond" class="close-btn">&times;</span> <!-- Changed ID -->
+    <img src="notice.jpg" alt="Popup" class="popup-image">
+  </div>
+</div>
+
+<style>
+    /* Popup background */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+/* Show popup */
+.popup.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Popup box */
+.popup-content {
+  position: relative;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 90%;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+}
+
+/* Image */
+.popup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  color: #000;
+  font-size: 25px;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+#text{
+    position:absolute;
+    white-space: nowrap;
+    top: 150px;
+    left: 0;
+    color: red;
+    font-size: 2rem;
+    z-index: 1000;
+}
+ @media (max-width: 768px){
+#text{
+    font-size: 1rem;
+    top: 110px;
+}
+}
+</style>
+    
+<script>
+// Show first popup on page load
+window.onload = function() {
+  document.getElementById("imagePopup").classList.add("active");
+};
+
+const firstPopup = document.getElementById("imagePopup");
+const secondPopup = document.getElementById("secondPopup");
+
+const closeFirst = document.getElementById("closeFirst"); // Fixed ID
+const closeSecond = document.getElementById("closeSecond");
+
+// Close first popup → open second popup
+closeFirst.onclick = function() {
+  firstPopup.classList.remove("active");
+
+  setTimeout(() => {
+    secondPopup.classList.add("active");
+  }, 300);
+};
+
+// Close second popup
+closeSecond.onclick = function() {
+  secondPopup.classList.remove("active");
+};
+</script>
+
+
+    
+    
+      <!-- Top Navigation Bar (100px) -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/Indrakamal.png" alt="" id="logoImage1">
+                <img src="/logo2.png" alt="" id="logoImage2" style="display: none;">
+            </div>
+        </div>
+          <div class="slogan-container">
+        <img src="/slogen.png">
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1PktFYU9ii/" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </nav>
+
+    
+    <!-- Secondary Navigation Bar (50px) -->
+    <nav class="secondary-nav">
+        <ul class="main-menu">
+            <li class="menu-item active">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="aboutus2.html">About Us</a>
+            </li>
+            <li class="menu-item">
+                <a href="service2.html">Services</a>
+            </li>
+            <li class="menu-item">
+                <a href="News.html">News</a>
+            </li>
+            <li class="menu-item">
+                <a href="contact_us.html">Contact Us</a>
+            </li>
+            
+              <li class="menu-item">
+                <a href="commettee.html">Committee</a>
+            </li>
+              <li class="menu-item">
+                <a href="member.html">Be a Member</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+    <p id="text">"आर्थिक क्रान्तिको सहयात्री"</p>
+
+<script>
+let pos = 0;
+
+function animate() {
+  const t = document.getElementById("text");
+  pos++;
+  t.style.transform = `translateX(${pos}px)`;
+
+  if (pos > window.innerWidth) {
+    pos = -t.offsetWidth;   // restart cleanly
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+    
+    
+<div class="hero">
+
+  <img src="/बचत पनि बीमा पनि .png" alt="Hero 1" class="active">
+  <img src="/एकमुष्ट बचत रहेको छ।.png" alt="Hero 2">
+  <img src="/indrakamalbanner3.png" alt="Hero 3">
+  <img src="/indrakamalbanner.png" alt="Hero 4">
+  <img src="/indrakamal-banner4.png" alt="Hero 5">
+  <img src="/indrakamal-banner5.png" alt="Hero 6">
+
+  <!-- Slider Dots -->
+  <div class="dots">
+    <div class="dot active" data-index="0"></div>
+    <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+    <div class="dot" data-index="3"></div>
+    <div class="dot" data-index="4"></div>
+     <div class="dot" data-index="5"></div>
+  </div>
+</div>
+
+<script>
+  const images = document.querySelectorAll('.hero img');
+  const dots = document.querySelectorAll('.dot');
+  let currentIndex = 0;
+  const total = images.length;
+
+  // Function to show a specific image
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    let nextIndex = (currentIndex + 1) % total;
+    showImage(nextIndex);
+  }, 5000);
+
+  // Dot click events
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      showImage(parseInt(dot.dataset.index));
+    });
+  });
+</script>
+
+
+
+
+<div class="container7">
+        <div class="left-box" style="border-radius: 10px;">
+            <div class="title7">Latest News</div>
+        </div>
+        <div class="right-box" id="newsContainer">
+            <!-- News items will be dynamically added here -->
+        </div>
+    </div>
+     <script>
+        const newsData = [
+            "सदस्यलाई डिजिटल सेवाको सुरुवात, अब मोबाइल एपमार्फत बचत तथा ऋण सुविधा",
+            "सहकारीमा सदस्य शिक्षा कार्यक्रम प्रारम्भ, वित्तीय साक्षरता बढाउने लक्ष्य", 
+            "नयाँ बचत योजना घोषणा, उच्च ब्याजदर सहित दीर्घकालीन बचतमा प्रोत्साहन",
+            "सहकारीको वार्षिक साधारणसभा सम्पन्न, आगामी वर्षको कार्ययोजना सार्वजनिक",
+            "साना उद्यमीलाई सहुलियत ऋण, महिलामैत्री कार्यक्रम संचालन"
+        ];
+
+        let currentNewsIndex = 0;
+
+        function typeText(element, text, speed = 50) {
+            return new Promise(resolve => {
+                let i = 0;
+                element.textContent = '';
+                
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        resolve();
+                    }
+                }
+                type();
+            });
+        }
+
+        async function displayNews() {
+            const newsContainer = document.getElementById('newsContainer');
+            
+            for (let i = 0; i < newsData.length; i++) {
+                const news = newsData[i];
+                
+                // Clear previous news
+                newsContainer.innerHTML = '';
+                
+                // Create news item container
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+                newsContainer.appendChild(newsItem);
+                
+                // Type the news
+                await typeText(newsItem, news, 80);
+                
+                // Wait before showing next news
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            }
+            
+            // Restart the cycle
+            displayNews();
+        }
+
+        // Start the news display when page loads
+        window.addEventListener('load', () => {
+            setTimeout(displayNews, 1000);
+        });
+    </script>
+
+
+  <section class="about-section">
+        <div class="about-container">
+            <!-- Left Column: Image -->
+            <div class="about-image">
+                <img src="ceo.jpg" alt="About Indrakamal">
+            </div>
+
+            <!-- Right Column: Text -->
+            <div class="about-text">
+                <h2>Message From CEO</h2>
+                <p>
+                  Indra Kamal Cooperative is a member-focused organization committed to enhancing financial stability and community growth.
+                   It provides tailored savings, credit, 
+                  and investment solutions, promotes financial discipline, and fosters inclusivity.
+                   Beyond financial services, the cooperative nurtures community, transparency,
+                    and trust, empowering members to achieve financial independence while contributing to 
+                    societal development.
+                </p>
+                
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+ <style>
+        /* About Section */
+        .about-section {
+            
+            padding: 0px 20px;
+            
+        }
+        
+       
+
+        .about-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: #1a5f38;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a5f38;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background: #1a5f38;
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+
+        }
+
+
+         .container7 {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            
+            
+            margin: 40px 60px;
+            height: 50px;
+            justify-content: cen;
+        }
+
+        .left-box {
+            flex: 1;
+            background: rgba(211, 12, 12, 0.95);
+            border-radius: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .title7 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f8f7f7;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-box {
+            flex: 2;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 5px 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .news-item {
+            font-size: 1.5rem;
+            color: #1d5000;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .news-item.show {
+            opacity: 1;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .news-content {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background-color: #667eea;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+           
+           .container7{ flex-direction: column;
+            height: fit-content;
+            
+            }
+
+
+             .container7 {
+           
+            
+            margin: 40px 10px;
+            gap: 10px;
+            
+        }
+
+            .right-box{
+                flex: 10;
+                font-size: 3px;
+                
+                
+            }
+             .news-item {
+            font-size: 1rem;
+            color: #1d5000;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+            
+            
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Enhanced Content Section -->
+<section class="content-section">
+    <div class="text-content">
+        <div class="content-header">
+            <span class="section-badge">About Indrakamal</span>
+            <h2 class="section-title">Building Financial Futures Together</h2>
+            <div class="title-underline"></div>
+        </div>
+        
+        <p class="section-description">
+            For over 25 years, CoopFinance has been empowering communities through cooperative financial services. 
+            We believe in putting our members first, offering personalized solutions that grow with your dreams.
+        </p>
+        
+       
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Secure & Trusted</h4>
+                    <p>Bank-level security with member-owned governance</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Community Focused</h4>
+                    <p>Local decisions that benefit our members</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Growth Oriented</h4>
+                    <p>Competitive rates and smart investment options</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="image-content">
+        <div class="image-container">
+            <img src="/cooperative.jpg" 
+                 alt="Financial Planning" 
+                 class="main-image">
+            
+            <div class="achievement-badge">
+                <div class="badge-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="badge-text">
+                    <span class="badge-title">Best Cooperative</span>
+                    <span class="badge-year">2024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Content Section */
+.content-section {
+    display: flex;
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 30px 20px;
+    align-items: stretch; /* make children stretch vertically */
+    gap: 30px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 100%);
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.08),
+        0 4px 15px rgba(22, 160, 133, 0.05);
+    overflow: hidden;
+}
+
+/* Text Content */
+.text-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Image Content */
+.image-content {
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+}
+
+.image-container {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.12),
+        0 6px 15px rgba(22, 160, 133, 0.1);
+    position: relative;
+    width: 90%;
+    height: 100%; /* take full height of section */
+}
+
+.main-image {
+    width: 100%;
+    height: 100%; /* stretch to container */
+    object-fit: cover; /* maintain aspect without distortion */
+}
+
+/* Badge */
+.achievement-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    box-shadow: 0 6px 15px rgba(243, 156, 18, 0.25);
+}
+
+/* Features etc. */
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #16a085, #48c9a0);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 12px 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #16a085 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.title-underline {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #16a085, #48c9a0);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-section {
+        max-width: 95%;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .features-grid {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-content, 
+    .image-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto; /* maintain proper scaling */
+    }
+
+    .main-image {
+        height: auto;
+        max-height: 350px; /* prevent it from being too tall */
+    }
+
+    .achievement-badge {
+        top: 10px;
+        left: 10px;
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+    }
+
+    .feature-item {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-section {
+        padding: 15px;
+        gap: 15px;
+        margin-top: 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-description {
+        font-size: 0.9rem;
+    }
+
+    .feature-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .main-image {
+        max-height: 250px;
+    }
+
+    .achievement-badge {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+   
+   
+
+
+    /* ------------------ EMI CALCULATOR ------------------ */
+    .header-container1 {
+        background-color: #0a4c23;
+        height: 80px;
+        width: 95%;
+        margin: 70px auto 30px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-title1 {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .calculator-container1 {
+        background: rgba(125, 243, 178, 0.24);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        max-width: 95%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .emi-title1 {
+        font-size: 1.2rem;
+        color: #374151;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .calculator-content1 {
+        display: flex;
+        gap: 40px;
+    }
+
+    .input-section1 {
+        flex: 2;
+    }
+
+    .output-section1 {
+        flex: 1;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 0px;
+        border: 2px solid #d1fae5;
+        border-radius: 12px;
+        outline: none;
+        font-size: 15px;
+        background: #ffffff;
+        transition: all 0.3s ease;
+    }
+
+    .input-row1 {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .input-group1 {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .input-group1.large {
+        flex: 3;
+    }
+
+    .input-group1.small {
+        flex: 1;
+    }
+
+    .input-label1 {
+        font-size: 0.9rem;
+        color: #000000;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+
+    .input-wrapper1 {
+        display: flex;
+        position: relative;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+        height: 42px;
+    }
+
+    .input-wrapper1:focus-within {
+        border-color: #10b981;
+    }
+
+    .input-field1 {
+        flex: 1;
+        padding: 10px 12px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        background: white;
+        height: 100%;
+    }
+
+    .input-symbol1 {
+        background: #0a4c23;
+        color: white;
+        padding: 10px 12px;
+        font-weight: bold;
+        min-width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .tenure-dropdown1 {
+        background: #0a4c23;
+        color: white;
+        border: none;
+        padding: 10px 8px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 100%;
+    }
+
+    .slider-container1 {
+        margin-top: 8px;
+    }
+
+    .slider1 {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 28px;
+        background: transparent;
+        outline: none;
+    }
+
+    .slider1::-webkit-slider-runnable-track {
+        height: 2px;
+        background: #305296;
+        border-radius: 9999px;
+    }
+
+    .slider1::-moz-range-track {
+        height: 2px;
+        background: #305296;
+        border-radius: 9999px;
+    }
+
+    .slider1::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #0a4c23;
+        border: 2px solid #fff;
+        box-shadow: 0 2px 6px rgba(0,0,0,.35);
+        margin-top: -7px;
+        cursor: pointer;
+    }
+
+    .slider1::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #0a4c23;
+        border: 2px solid #fff;
+        box-shadow: 0 2px 6px rgba(0,0,0,.35);
+        transform: translateY(-6px);
+        cursor: pointer;
+    }
+
+    .output-container1 {
+        background: #0a4c23;
+        border-radius: 15px;
+        padding: 25px;
+        color: white;
+        height: fit-content;
+    }
+
+    .emi-result1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .emi-label1 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        opacity: 0.9;
+    }
+
+    .emi-amount1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .divider1 {
+        height: 2px;
+        background: white;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .result-table1 {
+        width: 100%;
+    }
+
+    .result-row1 {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .result-row1:last-child {
+        border-bottom: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .result-label1 {
+        opacity: 0.9;
+    }
+
+    .result-value1 {
+        font-weight: 600;
+    }
+
+         @media (max-width: 768px){
+        .input-row1{
+            display: flex;
+            flex-direction: column;
+        }
+     }
+    
+</style>
+
+
+
+
+
+
+
+<style>
+        /* ------------------ HERO SECTION ------------------ */
+        .container1 {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 70vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .left-section1, .right-section1 {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card1 {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .card1 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .card1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent, rgba(21, 190, 30, 0.7));
+            z-index: -1;
+        }
+
+        .card1 h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .card1 p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .explore-btn1 {
+            background: white;
+            color: #10b981;
+            border: none;
+            padding: 12px 25px;
+            width: auto;
+            max-width: 200px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            align-self: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .explore-btn1:hover {
+            background: #f0f0f0;
+        }
+
+        .image-grid1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 15px;
+            height: 100%;
+            flex-grow: 1;
+        }
+
+        .image-item1 {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #e5e5e5;
+        }
+
+        .image-item1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-item1::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(transparent, rgba(86, 216, 93, 0.7));
+            z-index: 1;
+        }
+
+        .image-title1 {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .image-paragraph1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(86, 216, 93, 0.7);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+            font-size: 0.9rem;
+        }
+
+        .image-item1:hover .image-paragraph1 {
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .card1 {
+                padding: 20px;
+            }
+            
+            .card1 h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card1 p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container1 {
+                flex-direction: row;
+                min-height: 70vh;
+            }
+            
+            .left-section1, .right-section1 {
+                width: 50%;
+                padding: 10px;
+            }
+            
+            .card1 {
+                height: 100%;
+                margin-bottom: 0;
+                padding: 15px;
+            }
+            
+            .card1 h1 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .card1 p {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .explore-btn1 {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .image-grid1 {
+                gap: 8px;
+            }
+            
+            .image-title1 {
+                font-size: 0.7rem;
+                bottom: 8px;
+                left: 8px;
+            }
+            
+            .image-paragraph1 {
+                padding: 8px;
+                font-size: 0.7rem;
+            }
+            .calculator-content1{
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container1 {
+                min-height: 35vh;
+            }
+            
+            .left-section1, .right-section1 {
+                padding: 8px;
+            }
+            
+            .card1 {
+                padding: 10px;
+            }
+            
+            .card1 h1 {
+                font-size: 1.5rem;
+            }
+            
+            .card1 p {
+                font-size: 1rem;
+            }
+            
+            .explore-btn1 {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+            }
+            
+            .image-grid1 {
+                gap: 6px;
+            }
+            
+            .image-title1 {
+                font-size: 0.6rem;
+                bottom: 6px;
+                left: 6px;
+            }
+             .calculator-content1{
+                flex-direction: column;
+            }
+
+            .image-title1{
+                  font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <!-- ------------------ HERO SECTION ------------------ -->
+    <div class="container1">
+        <div class="left-section1">
+            <div class="card1">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Platform Background">
+                <h1>Secure your future</h1>
+                <p>Take the first step toward your financial goals with us.</p>
+                <a href="service2.html"><button class="explore-btn1">Explore More</button></a>
+            </div>
+        </div>
+        
+        <div class="right-section1">
+            <div class="image-grid1">
+                
+                <div class="image-item1">
+                    <a href="service2.html">
+                    <img src="data:image/jpeg;base64,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" alt="Design Services">
+                    <div class="image-title1">Saving Services</div>
+                    <div class="image-paragraph1">
+                        <p>Create stunning visual experiences with our professional design team.</p>
+                    </div>
+                    </a>
+                </div>
+            
+                <div class="image-item1">
+                    <a href="service2.html">
+                    <img src="data:image/jpeg;base64,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" alt="Development">
+                    <div class="image-title1">Loan Service</div>
+                    <div class="image-paragraph1">
+                        <p>Build robust applications with cutting-edge technology and best practices.</p>
+                    </div>
+                </a>
+                </div>
+                
+                <div class="image-item1">
+                    <a href="service2.html">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marketing">
+                    <div class="image-title1">Insurance Service</div>
+                    <div class="image-paragraph1">
+                        <p>Reach your target audience with strategic marketing campaigns that deliver results.</p>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="image-item1">
+                    <a href="service2.html">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Analytics">
+                    <div class="image-title1">Extra Services</div>
+                    <div class="image-paragraph1">
+                        <p>Make data-driven decisions with comprehensive analytics and reporting tools.</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<section class="app-section">
+  <div class="app-container">
+    
+    <!-- Left side image -->
+    <div class="app-img">
+      <img src="app.png">
+    </div>
+
+    <!-- Right side content -->
+    <div class="app-content">
+      <h1>Manage Your Digital Payments Anytime, Anywhere</h1>
+      <h3>Experience quick, secure, and convenient banking with our all-in-one mobile app for seamless financial control.</h3>
+      
+      <!-- Download buttons -->
+      <div class="download-buttons">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
+        <a href="https://play.google.com/store/apps/details?id=com.infodev.mindrakamal&hl=en"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.app-section {
+  width: 100%;
+  background: #f9fafb;
+  padding: 10px 0;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  
+  overflow: hidden;
+}
+
+.app-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.app-img img {
+ height: 400px;
+}
+
+.app-content {
+  flex: 1;
+  padding: 40px 50px;
+  color: #064e3b;
+}
+
+.app-content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #047857;
+}
+
+.app-content h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #065f46;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.download-buttons img {
+  height: 55px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.download-buttons img:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .app-img {
+    width: 100%;
+    height: 250px;
+  }
+  .app-img img {
+    object-fit: cover;
+    border-radius: 0;
+  }
+  .app-content {
+    text-align: center;
+  }
+  .download-buttons {
+    justify-content: center;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ------------------ EMI CALCULATOR ------------------ -->
+<div class="header-container1">
+    <div class="header-title1">EMI Calculator</div>
+</div>
+
+<div class="calculator-container1">
+    <div class="calculator-content1">
+        <div class="input-section1">
+            <div class="input-row1">
+                <!-- Loan Amount -->
+                <div class="input-group1 large">
+                    <label class="input-label1">Loan Amount (in Rupees)</label>
+                    <div class="input-wrapper1">
+                        <input type="number" class="input-field1" id="loanAmount" value="100000" min="10000" max="10000000">
+                        <div class="input-symbol1">₹</div>
+                    </div>
+                    <div class="slider-container1">
+                        <input type="range" class="slider1" id="loanSlider" min="10000" max="10000000" step="1000" value="100000">
+                    </div>
+                </div>
+
+                <!-- Interest Rate -->
+                <div class="input-group1 small">
+                    <label class="input-label1">Interest Rate (per annum)</label>
+                    <div class="input-wrapper1">
+                        <input type="number" class="input-field1" id="interestRate" value="8.5" min="1" max="30" step="0.1">
+                        <div class="input-symbol1">%</div>
+                    </div>
+                    <div class="slider-container1">
+                        <input type="range" class="slider1" id="rateSlider" min="1" max="30" step="0.1" value="8.5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-row1">
+                <!-- Loan Tenure -->
+                <div class="input-group1">
+                    <label class="input-label1">Loan Tenure</label>
+                    <div class="input-wrapper1">
+                        <input type="number" class="input-field1" id="loanTenure" value="24" min="1" max="600">
+                        <select class="tenure-dropdown1" id="tenureType">
+                            <option value="months" selected>Months</option>
+                            <option value="years">Years</option>
+                        </select>
+                    </div>
+                    <div class="slider-container1">
+                        <input type="range" class="slider1" id="tenureSlider" min="1" max="600" value="24">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="output-section1">
+            <div class="output-container1">
+                <div class="emi-result1">
+                    <div class="emi-label1">Monthly EMI</div>
+                    <div class="emi-amount1" id="monthlyEMI">₹0</div>
+                </div>
+
+                <div class="divider1"></div>
+
+                <div class="result-table1">
+                    <div class="result-row1">
+                        <span class="result-label1">Principal</span>
+                        <span class="result-value1" id="principalAmount">₹0</span>
+                    </div>
+                    <div class="result-row1">
+                        <span class="result-label1">Interest Payable</span>
+                        <span class="result-value1" id="interestPayable">₹0</span>
+                    </div>
+                    <div class="result-row1">
+                        <span class="result-label1">Total Amount Payable</span>
+                        <span class="result-value1" id="totalAmount">₹0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    function formatCurrency(amount) {
+        return '₹' + amount.toLocaleString('en-IN');
+    }
+
+    function calculateEMI() {
+        const loanAmount = parseFloat(document.getElementById('loanAmount').value) || 0;
+        const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+        const tenure = parseFloat(document.getElementById('loanTenure').value) || 0;
+        const tenureType = document.getElementById('tenureType').value;
+
+        const monthlyRate = annualRate / 12 / 100;
+        const tenureMonths = tenureType === 'years' ? tenure * 12 : tenure;
+
+        if (loanAmount && annualRate && tenure) {
+            const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) / 
+                       (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+            
+            const totalAmount = emi * tenureMonths;
+            const interestPayable = totalAmount - loanAmount;
+
+            document.getElementById('monthlyEMI').textContent = formatCurrency(Math.round(emi));
+            document.getElementById('principalAmount').textContent = formatCurrency(loanAmount);
+            document.getElementById('interestPayable').textContent = formatCurrency(Math.round(interestPayable));
+            document.getElementById('totalAmount').textContent = formatCurrency(Math.round(totalAmount));
+        }
+    }
+
+    // Loan Amount
+    document.getElementById('loanAmount').addEventListener('input', function() {
+        document.getElementById('loanSlider').value = this.value;
+        calculateEMI();
+    });
+    document.getElementById('loanSlider').addEventListener('input', function() {
+        document.getElementById('loanAmount').value = this.value;
+        calculateEMI();
+    });
+
+    // Interest Rate
+    document.getElementById('interestRate').addEventListener('input', function() {
+        document.getElementById('rateSlider').value = this.value;
+        calculateEMI();
+    });
+    document.getElementById('rateSlider').addEventListener('input', function() {
+        document.getElementById('interestRate').value = this.value;
+        calculateEMI();
+    });
+
+    // Loan Tenure
+    document.getElementById('loanTenure').addEventListener('input', function() {
+        document.getElementById('tenureSlider').value = this.value;
+        calculateEMI();
+    });
+    document.getElementById('tenureSlider').addEventListener('input', function() {
+        document.getElementById('loanTenure').value = this.value;
+        calculateEMI();
+    });
+
+    // Tenure type (months/years)
+    document.getElementById('tenureType').addEventListener('change', calculateEMI);
+
+    // Initial calculation
+    calculateEMI();
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<body>
+    
+
+
+
+
+    
+   
+
+
+
+
+
+
+
+<style>
+
+        .stats-section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-top: 60px;
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.1);
+            position: relative;
+            overflow: hidden;
+        margin-left: 20px;
+        margin-right: 20px;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4caf50, #66bb6a, #81c784, #4caf50);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            color: #2d5016;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #558b2f;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+            
+            .stats-section {
+                padding: 40px 20px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        
+    </style>
+
+<body>
+   
+
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Partner Organizations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Years of Partnership</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25K+</div>
+                    <div class="stat-label">Members Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+    
+
+        // Add hover effect for stats
+        document.querySelectorAll('.stat-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+
+
+
+
+           
+            
+
+
+
+
+
+
+   <footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: About -->
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>
+        Built on trust and innovation, we're committed to helping you achieve
+        your financial goals with transparency.
+      </p>
+      <div class="social-icons-footer">
+        <a href="https://www.facebook.com/share/1PktFYU9ii/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Contact -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
+        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-559258</div>
+        <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Indrakamal Multipurpose. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+     
+        let currentImage = 1;
+        let isAnimating = false;
+        
+        function slideToNextImage() {
+            if (isAnimating) return;
+            
+            const img1 = document.getElementById('logoImage1');
+            const img2 = document.getElementById('logoImage2');
+            
+            isAnimating = true;
+            
+            if (currentImage === 1) {
+                // Slide from image 1 to image 2
+                slideOut(img1, () => {
+                    slideIn(img2, () => {
+                        currentImage = 2;
+                        isAnimating = false;
+                    });
+                });
+            } else {
+                // Slide from image 2 to image 1
+                slideOut(img2, () => {
+                    slideIn(img1, () => {
+                        currentImage = 1;
+                        isAnimating = false;
+                    });
+                });
+            }
+        }
+        
+        function slideOut(element, callback) {
+            element.style.opacity = '1';
+            
+            let opacity = 1;
+            const endOpacity = 0;
+            const duration = 500;
+            const frameRate = 60;
+            const totalFrames = (duration / 1000) * frameRate;
+            const stepSize = (endOpacity - opacity) / totalFrames;
+            
+            function animate() {
+                opacity += stepSize;
+                element.style.opacity = Math.max(0, opacity);
+                
+                if (opacity > endOpacity) {
+                    requestAnimationFrame(animate);
+                } else {
+                    element.style.display = 'none';
+                    element.style.opacity = '0';
+                    callback();
+                }
+            }
+            animate();
+        }
+        
+        function slideIn(element, callback) {
+            element.style.display = 'block';
+            element.style.opacity = '0';
+            
+            let opacity = 0;
+            const endOpacity = 1;
+            const duration = 500;
+            const frameRate = 60;
+            const totalFrames = (duration / 1000) * frameRate;
+            const stepSize = (endOpacity - opacity) / totalFrames;
+            
+            function animate() {
+                opacity += stepSize;
+                element.style.opacity = Math.min(1, opacity);
+                
+                if (opacity < endOpacity) {
+                    requestAnimationFrame(animate);
+                } else {
+                    element.style.opacity = '1';
+                    callback();
+                }
+            }
+            animate();
+        }
+        
+        setInterval(slideToNextImage, 5000);
+    
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
