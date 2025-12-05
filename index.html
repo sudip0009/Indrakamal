@@ -79,8 +79,8 @@
   .dot.active {
     background-color: yellow;
   }
-        
-       
+      
+ 
         
      
        
@@ -158,21 +158,7 @@
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-#text{
-    position:absolute;
-    white-space: nowrap;
-    top: 150px;
-    left: 0;
-    color: red;
-    font-size: 2rem;
-    z-index: 1000;
-}
- @media (max-width: 768px){
-#text{
-    font-size: 1rem;
-    top: 110px;
-}
-}
+
 </style>
     
 <script>
@@ -216,6 +202,14 @@ closeSecond.onclick = function() {
           <div class="slogan-container">
         <img src="/slogen.png">
         </div>
+
+
+
+
+        <div class="gif">
+            <img src="https://giwmscdnone.gov.np/static/grapejs/img/Nepal-flag.gif" alt="">
+            <p>नेपाली सहकार्य, नेपाली समृद्धिको आधार—सहकारीबाट सम्भव छ उज्यालो भविष्य।</p>
+        </div>
         
         <div class="social-icons">
             <a href="https://www.facebook.com/share/1PktFYU9ii/" class="social-icon">
@@ -251,7 +245,7 @@ closeSecond.onclick = function() {
             </li>
             
               <li class="menu-item">
-                <a href="commettee.html">Committee</a>
+                <a href="commettee.html">Board Members</a>
             </li>
               <li class="menu-item">
                 <a href="member.html">Be a Member</a>
@@ -262,25 +256,77 @@ closeSecond.onclick = function() {
 
 
 
-    <p id="text">"आर्थिक क्रान्तिको सहयात्री"</p>
 
-<script>
-let pos = 0;
 
-function animate() {
-  const t = document.getElementById("text");
-  pos++;
-  t.style.transform = `translateX(${pos}px)`;
+    <style>
+       
 
-  if (pos > window.innerWidth) {
-    pos = -t.offsetWidth;   // restart cleanly
-  }
+        .scroll-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            
+            padding: 15px 0;
+            overflow: hidden;
+            z-index: 1000;
+            position: fixed;
+            top: 134px;
+           
+        }
 
-  requestAnimationFrame(animate);
-}
+        .scroll-text {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: clamp(18px, 4vw, 32px);
+            font-weight: bold;
+            color: red;
+            animation: scroll-right 20s linear infinite;
+            padding-right: 100%;
+        }
 
-animate();
-</script>
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+       
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .scroll-container {
+                padding: 12px 0;
+                TOP: 100PX;
+            }
+
+
+
+           
+        }
+
+        @media (max-width: 480px) {
+            .scroll-container {
+                padding: 10px 0;
+            }
+
+            
+        }
+    </style>
+
+    <div class="scroll-container">
+        <div class="scroll-text">आर्थिक क्रान्तिको सहयात्री</div>
+    </div>
+
+   
+
+
+
+
+
     
     
 <div class="hero">
@@ -2024,7 +2070,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <h3>Contact Us</h3>
       <div class="contact-info">
         <div><i class="fa-solid fa-location-dot"></i> Durbar Marg, Kathmandu</div>
-        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-559258</div>
+        <div><i class="fa-solid fa-phone"></i> 01-5925888, +977 970-5592588</div>
         <div><i class="fa-solid fa-envelope"></i> indrakamalmultipurpose@gmail.com</div>
       </div>
     </div>

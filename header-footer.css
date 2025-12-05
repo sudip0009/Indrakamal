@@ -44,6 +44,18 @@
             height: 90px;
             width: auto;
         }
+
+
+        .gif{
+          display: flex;
+          width: 250px;
+          height: 60px;
+          margin-bottom: 10px;
+        }
+
+        .gif p{
+          color: green;
+        }
         .social-icons {
             display: flex;
             gap: 15px;
@@ -101,6 +113,9 @@
                 
             }
             
+            .gif{
+              display: none;
+            }
             .social-icons {
                 gap: 10px;
                 position: absolute;
